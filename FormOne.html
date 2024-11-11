@@ -1,0 +1,71 @@
+<form name="FirstForm" action = "TextArea.html" method="post">
+<fieldset>
+<LEGEND>Names</LEGEND>
+First name: <input type="text" name="firstname"  
+value="leela" onblur=CheckFirstName() onkeypress=EraseError()>
+<P id=Error1 style="color:red"></p>
+<br> Last name: <input type="password" name="lastname"  value="Exilant"> <BR>
+</fieldset><br><br>
+<FIELDSET>
+	<LEGEND>Gender</LEGEND>
+	Male <input type="radio" name="sex" value="male" checked>  <br> 
+	Female <input type="radio" name="sex" value="female">  <BR>
+</FIELDSET>
+	<input type="checkbox" name="sex" value="male" checked> Male <br> 
+	<input type="checkbox" name="sex" value="female"> Female <BR>
+	<input type="submit" value="Submit"> 
+	<input type="reset" value="Reset">
+	<input type="button" value="OK"><BR>
+	<select name="MultiList" size=4 multiple>
+		<option value="I">1</option>
+		<option value="II" selected>2</option>
+		<option value="III">3</option>
+		<option value="IV">4</option>
+		<option value="V">5</option>
+		<option value="VI">6</option>
+	</select> <BR>
+	<select name="SingleList" size=3 >
+		<option value="I">1</option>
+		<option value="II" selected>2</option>
+		<option value="III">3</option>
+		<option value="IV">4</option>
+		<option value="V">5</option>
+		<option value="VI">6</option>
+	</select> <BR><BR><BR>
+	<select >
+		<option value="I">1</option>
+		<option value="II" selected>2</option>
+		<option value="III">3</option>
+		<option value="IV">4</option>
+		<option value="V">5</option>
+		<option value="VI">6</option>
+	</select>
+</form><BR>
+<a href="mailto:shadaksharappa.kb@exilant.com">Shadaksharappa K B</a><BR>
+<form action="mailto:shadaksharappa.kb@exilant.com" method="post">
+Name:<br> <input type="text" name="name" value="ddd" size="20">
+<br>Mail:<br><input type="text" name="mail" value="shadaksharappa.kb@exilant.com" size="20">
+<br>Comment:<br> <textarea name="comment" cols=20 rows=3>yourcomment</textarea>
+<br><br>
+<input type="submit" value="Send">
+<input type="reset" value="Reset">
+</form>
+<script>
+	function EraseError()
+	{
+		p=document.getElementById("Error1");
+		p.innerHTML="";
+
+	}
+
+	function CheckFirstName()
+	{
+		var r=document.FirstForm.firstname.value
+		if (r == "") 
+		{
+			p=document.getElementById("Error1");
+			p.innerHTML="Firstname cannot be empty ";
+			document.FirstForm.firstname.focus();
+		}
+	}
+</script>
